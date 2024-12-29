@@ -5,7 +5,7 @@ This repository contains code samples for the Comparison Shopping Service API
 directory contains a `README` file with more information on how to run the
 samples for that particular language.
 
-This document covers setting up authentication and the common configuration file
+This document cover****s setting up authentication and the common configuration file
 used by all the samples. For more information on the API, please refer to the
 [CSS API documentation](https://developers.google.com/comparison-shopping-services/api).
 
