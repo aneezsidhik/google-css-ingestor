@@ -154,7 +154,7 @@ public class InsertCssProductInput {
     // Create a thread pool to insert multiple CSS Products in parallel
     ExecutorService threadPool = Executors.newCachedThreadPool();
 //    List<String> lines = Files.readAllLines(Paths.get("https://amanaonline.co.uk/wp-content/uploads/rex-feed/feed-115099.csv"));
-    List<String> lines = Files.readAllLines(Paths.get("java/src/main/resources/products/feed.csv"));
+    List<String> lines = Files.readAllLines(Paths.get("src/main/resources/products/feed.csv"));
     lines.remove(0);
     AtomicInteger i = new AtomicInteger();
     System.out.println(lines.size());
