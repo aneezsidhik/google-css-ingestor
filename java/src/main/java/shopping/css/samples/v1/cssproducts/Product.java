@@ -10,8 +10,9 @@ public class Product {
     private final Double price;
     private final String gtin;
     private final String brand;
+    private final String headLineOffer;
 
-    public Product(String productId, String title, String description, String productType, String imageLink, String productLink, Double price, String gtin, String brand) {
+    public Product(String productId, String title, String description, String productType, String imageLink, String productLink, Double price, String gtin, String brand, String headLineOffer) {
         this.productId = productId;
         this.title = title;
         this.description = description;
@@ -21,6 +22,7 @@ public class Product {
         this.price = price;
         this.gtin = gtin;
         this.brand = brand;
+        this.headLineOffer = headLineOffer;
     }
 
     public String getProductId() {
@@ -57,5 +59,9 @@ public class Product {
 
     public String getBrand() {
         return brand;
+    }
+
+    public String getHeadLineOffer() {
+        return headLineOffer;
     }
 }

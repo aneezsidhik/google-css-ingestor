@@ -119,7 +119,7 @@ public class InsertCssProductInput {
                                       .setAttributes(
                                               com.google.shopping.css.v1.Attributes.newBuilder()
                                                       .setTitle(product.getTitle())
-                                                      .setHeadlineOfferLink(product.getProductLink())
+                                                      .setHeadlineOfferLink(product.getHeadLineOffer())
                                                       .setHeadlineOfferCondition("New")
                                                       .setDescription(product.getDescription())
                                                       .setNumberOfOffers(2)
@@ -127,7 +127,7 @@ public class InsertCssProductInput {
                                                       .setImageLink(product.getImageLink())
                                                       .setBrand(product.getBrand())
                                                       .setGoogleProductCategory(product.getProductType())
-                                                      .setGtin("3614030018941")
+                                                      .setGtin(product.getGtin())
                                                       .setHeadlineOfferPrice(
                                                               com.google.shopping.type.Price.newBuilder().setAmountMicros((long) (product.getPrice()*1_000_000)).setCurrencyCode("GBP").build())
                                                       .build())
@@ -154,14 +154,18 @@ public class InsertCssProductInput {
     // Create a thread pool to insert multiple CSS Products in parallel
     ExecutorService threadPool = Executors.newCachedThreadPool();
 //    List<String> lines = Files.readAllLines(Paths.get("https://amanaonline.co.uk/wp-content/uploads/rex-feed/feed-115099.csv"));
-    List<String> lines = Files.readAllLines(Paths.get("src/main/resources/products/feed.csv"));
+    List<String> lines = Files.readAllLines(Paths.get("java/src/main/resources/products/feed.csv"));
     lines.remove(0);
     AtomicInteger i = new AtomicInteger();
     System.out.println(lines.size());
     List<Product> products = lines.stream().map(line -> {
 //      System.out.println(line);
       String[] tokens = line.split(",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)", -1);
-      return new Product("rawProvidedId" + i.getAndIncrement(), tokens[1], tokens[2], tokens[3], tokens[4], tokens[8], !"".equals(tokens[5]) ? Double.parseDouble(tokens[5]) : 0, "3614030018941", tokens[7]);
+      return new Product("rawProvidedId" + i.getAndIncrement(), tokens[1], tokens[2], tokens[3], tokens[4], tokens[8], !"".equals(tokens[5]) ? Double.parseDouble(tokens[5]) : 0,
+//              "3614030018941",
+              tokens[6],
+              tokens[7],
+              tokens[9]);
     }).collect(Collectors.toList());
 
     products.parallelStream().forEach(product -> {

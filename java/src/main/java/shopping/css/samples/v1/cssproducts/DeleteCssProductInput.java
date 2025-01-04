@@ -67,7 +67,7 @@ public class DeleteCssProductInput {
 
     // Create a thread pool to delete multiple CSS Products in parallel
     ExecutorService threadPool = Executors.newCachedThreadPool();
-    for (int i = 0; i < 3; i++) {
+    for (int i = 501; i < 600; i++) {
       // The ID uniquely identifying each product. In
       // the format languageCode~countryCode~rawProvidedId
       final String productId = "en~GB~rawProvidedId" + i;
