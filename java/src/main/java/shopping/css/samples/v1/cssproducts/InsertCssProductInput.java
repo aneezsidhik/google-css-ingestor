@@ -122,7 +122,7 @@ public class InsertCssProductInput {
                                                       .setHeadlineOfferLink(product.getHeadLineOffer())
                                                       .setHeadlineOfferCondition("New")
                                                       .setDescription(product.getDescription())
-                                                      .setNumberOfOffers(2)
+                                                      .setNumberOfOffers(product.getNumberOfOffers())
                                                       .setCppLink(product.getProductLink())
                                                       .setImageLink(product.getImageLink())
                                                       .setBrand(product.getBrand())
@@ -161,11 +161,11 @@ public class InsertCssProductInput {
     List<Product> products = lines.stream().map(line -> {
 //      System.out.println(line);
       String[] tokens = line.split(",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)", -1);
-      return new Product("rawProvidedId" + i.getAndIncrement(), tokens[1], tokens[2], tokens[3], tokens[4], tokens[8], !"".equals(tokens[5]) ? Double.parseDouble(tokens[5]) : 0,
+      return new Product("rawProvidedId" + tokens[11], tokens[1], tokens[2], tokens[3], tokens[4], tokens[8], !"".equals(tokens[5]) ? Double.parseDouble(tokens[5]) : 0,
 //              "3614030018941",
               tokens[6],
               tokens[7],
-              tokens[9]);
+              tokens[9], Integer.valueOf(tokens[10]));
     }).collect(Collectors.toList());
 
     products.parallelStream().forEach(product -> {
