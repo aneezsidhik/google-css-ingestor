@@ -69,12 +69,12 @@ public class InsertCssProductInput {
                       .setAttributes(
                           com.google.shopping.css.v1.Attributes.newBuilder()
                               .setTitle("Instant Pot Superior Slow Cooker 7.1L")
-                              .setHeadlineOfferLink("https://amanaonline.co.uk/store-2/instant-pot-superior-slow-cooker-7-1l-2/")
+                              .setHeadlineOfferLink("https://amanaonlineuk.com/store-2/instant-pot-superior-slow-cooker-7-1l-2/")
                               .setHeadlineOfferCondition("New")
                               .setDescription("Discover why our Slow Cooker has been ranked number 1 by Good Housekeeping, scoring an impressive 94/100! Trusted experts say, 'The name of this slow cooker isn't misleading, it truly was superior on test'.The Instant Slow Cooker makes cooking low and slow dishes more convenient than ever, from cooking to table to clean up. Sear and sauté ingredients in the same pot before slow cooking, and then keep your recipe warm until you are ready. When it's time to eat, simply take the lightweight inner pot to the table for serving, and pop it in the dishwasher for easy clean up. And if you don't fancy a slow-cooked meal, our versatile slow cooker also doubles up as a steamer so you can effortlessly prepare healthy steamed meals too! 4 functions in 1: Slow cook, Steam, Sauté/Sear, and Keep Warm. Extra-large 7.1L capacity that can cook up to 10 portions. Large surface area makes sauteing ingredients quick and easy. EasyGrab handles to easily take the lightweight inner pot to the table for serving. Adapt for any recipe with full customisable time and temperature controls. Dishwasher-safe lid and non-stick pot.SKU: 140-6128-01-UK")
                               .setNumberOfOffers(2)
-                              .setCppLink("https://amanaonline.co.uk/store-2/instant-pot-superior-slow-cooker-7-1l-2/")
-                                  .setImageLink("https://amanaonline.co.uk/wp-content/uploads/2024/11/Instant-Pot-Superior-Slow-Cooker-7.1L.png")
+                              .setCppLink("https://amanaonlineuk.com/store-2/instant-pot-superior-slow-cooker-7-1l-2/")
+                                  .setImageLink("https://amanaonlineuk.com/wp-content/uploads/2024/11/Instant-Pot-Superior-Slow-Cooker-7.1L.png")
                               .setBrand("Brand")
                               .setGoogleProductCategory("Media > Books")
                               .setGtin("3614030018941")
@@ -153,7 +153,7 @@ public class InsertCssProductInput {
 
     // Create a thread pool to insert multiple CSS Products in parallel
     ExecutorService threadPool = Executors.newCachedThreadPool();
-//    List<String> lines = Files.readAllLines(Paths.get("https://amanaonline.co.uk/wp-content/uploads/rex-feed/feed-115099.csv"));
+//    List<String> lines = Files.readAllLines(Paths.get("https://amanaonlineuk.com/wp-content/uploads/rex-feed/feed-115099.csv"));
     List<String> lines = Files.readAllLines(Paths.get("src/main/resources/products/feed.csv"));
     lines.remove(0);
     AtomicInteger i = new AtomicInteger();
